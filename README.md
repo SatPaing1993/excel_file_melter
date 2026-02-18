@@ -33,24 +33,21 @@ pip install pandas openpyxl
 Setup
 
 Clone the repository:
-
 git clone https://github.com/YourUsername/commercial_bank_data_consolidation.git
 cd commercial_bank_data_consolidation
 
 Place your Excel files in a folder, for example:
-
 G:\My Drive\Data
 
 Open Final Capstone Adv Python Project.py and set the input folder and output file name:
-
 input_dir = r"G:\My Drive\Data"
 output_file = "Final_Commercial_Bank_Consolidated.xlsx"
 
 Run the script:
-
 python "Final Capstone Adv Python Project.py"
 
 Output
+
 Single Excel file: Final_Commercial_Bank_Consolidated.xlsx
 
 Columns: No, Label, Amount, Month, Year, File Name

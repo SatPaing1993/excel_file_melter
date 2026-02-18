@@ -27,33 +27,45 @@ Capstone project for Advanced Python training.
 - [openpyxl](https://openpyxl.readthedocs.io/en/stable/)
 
 Install dependencies:
-pip install pandas openpyxl
 
+```bash
+pip install pandas openpyxl
 Setup
 Clone the repository:
+
+bash
+Copy code
 git clone https://github.com/YourUsername/commercial_bank_data_consolidation.git
 cd commercial_bank_data_consolidation
-
 Place your Excel files in a folder, for example:
-G:\My Drive\Data
 
+css
+Copy code
+G:\My Drive\Data
 Open Final Capstone Adv Python Project.py and set the input folder and output file name:
+
+python
+Copy code
 input_dir = r"G:\My Drive\Data"
 output_file = "Final_Commercial_Bank_Consolidated.xlsx"
-
 Run the script:
-python "Final Capstone Adv Python Project.py"
 
+bash
+Copy code
+python "Final Capstone Adv Python Project.py"
 Output
 Single Excel file: Final_Commercial_Bank_Consolidated.xlsx
+
 Columns: No, Label, Amount, Month, Year, File Name
 
 Repository Structure
+sql
+Copy code
 ├── Final Capstone Adv Python Project.py
 ├── README.md
 ├── LICENSE
 ├── requirements.txt
-
+└── .gitignore
 License
 This project is licensed under the MIT License.
 
@@ -61,3 +73,6 @@ Author
 Sat Paing Oo
 
 GitHub: SatPaing1993
+
+markdown
+Copy code

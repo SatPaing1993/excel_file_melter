@@ -3,6 +3,7 @@ import pandas as pd
 pd.set_option('display.max_columns', None)
 import os
 
+
 #input dir
 input_dir = r"G:\My Drive\Data"
 
@@ -22,9 +23,9 @@ for file in files:
     #rename two columns
     data = data.rename(columns={0: "No", 1: "Label"})
     #select amount rows
-    amount = data.iloc[:, 2:]
+    amount = data.iloc[:, 2:-1]
     #select date row
-    date = df.iloc[5, 2:]
+    date = df.iloc[5, 2:-1]
     #put date as col header
     amount.columns = date
     #combine needed columns
@@ -37,6 +38,8 @@ for file in files:
     #Split date column
     df3 = df3.copy()
     df3[["Month","Year"]] = df3["Date"].astype(str).str.split(r"\s+" ,n=1, expand=True)
+    #extract 4 digit year only
+    df3["Year"] = df3["Year"].astype(str).str.extract(r"(\d{4})")
     #drop date col
     df3 = df3.drop(columns=["Date"])
     #change month type
@@ -56,7 +59,11 @@ for file in files:
 #concat all files    
 final_df = pd.concat(all_df, ignore_index=True)
 
-#extract excel file
-final_df.to_excel("Final_Commercial_Bank_Consolidated.xlsx",index=False)
+#drop duplicate rows
+#final_df = final_df.drop_duplicates()
+
+#export excel
+output_file = "Final_Commercial_Bank_Consolidated.xlsx"
+final_df.to_excel(output_file, index=False)
 
 print("Completed")
